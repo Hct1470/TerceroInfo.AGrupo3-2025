@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinea los elementos al inicio, centro y final */
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo img {
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  nav {
+    display: flex;
+    gap: 30px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #00bcd4; /* Un azul más vibrante al pasar el ratón */
+  }
+  
+  .search-bar-general {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar-general input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 250px;
+    margin-right: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .search-bar-general input::placeholder {
+    color: #bbb;
+  }
+  
+  .search-bar-general button {
+    background-color: #00bcd4; /* Azul vibrante */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-bar-general button:hover {
+    background-color: #0097a7; /* Un tono más oscuro de azul */
+  }
+  
+  main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ultima-hora {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .ultima-hora .imagen-grande {
+    flex: 2;
+    background-color: #ddd;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative; /* Para posicionar el input de archivo */
+    cursor: pointer; /* Indica que es clickeable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .ultima-hora .imagen-grande img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .ultima-hora .texto {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .ultima-hora h2 {
+    font-size: 2.2em;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+  }
+  
+  .ultima-hora p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .noticias-pequenas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px;
+  }
+  
+  .noticia {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Para posicionar el input de archivo */
+  }
+  
+  .noticia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .noticia img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    cursor: pointer; /* Indica que es clickeable */
+  }
+  
+  .noticia p {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  
+  footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+    margin-top: 40px;
+  }
+  
+  .verificado {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para el contenido editable */
+  .editable-content:focus {
+    outline: 2px solid #00bcd4;
+    background-color: #e6f7ff;
+    border-radius: 4px;
+    padding: 2px 5px;
+  }
+  
+  /* Media Queries para Responsividad */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 15px;
+      gap: 15px;
+    }
+  
+    .search-bar-general {
+      width: 100%;
+      margin-top: 15px;
+      justify-content: center;
+    }
+  
+    .search-bar-general input {
+      width: calc(100% - 70px); /* Ajusta el ancho para el botón */
+    }
+  
+    .ultima-hora {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .ultima-hora .imagen-grande {
+      height: 250px;
+    }
+  
+    .ultima-hora h2 {
+      font-size: 1.8em;
+    }
+  
+    .ultima-hora p {
+      font-size: 1em;
+    }
+  
+    .noticias-pequenas {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav a {
+      font-size: 0.9em;
+    }
+  
+    .search-bar-general input {
+      font-size: 12px;
+    }
+  
+    .search-bar-general button {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  
+    .ultima-hora .imagen-grande {
+      height: 200px;
+    }
+  
+    .noticia img {
+      height: 150px;
+    }
+  }

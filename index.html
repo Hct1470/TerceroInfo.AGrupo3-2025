@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WoTT5 - Noticias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo WoTT5">
+    </div>
+    <nav>
+      <a href="#" data-section="inicio">INICIO</a>
+      <a href="#" data-section="ultima-hora">ÚLTIMA HORA</a>
+      <a href="#" data-section="deportes">DEPORTES</a>
+      <a href="#" data-section="internacionales">INTERNACIONALES</a>
+      <a href="#" data-section="olimpiadas">OLIMPIADAS</a>
+      <a href="#" data-section="ambiental">AMBIENTAL</a>
+    </nav>
+    <div class="search-bar-general">
+      <input type="text" id="global-search" placeholder="Buscar en toda la página...">
+      <button id="search-button">Buscar</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="ultima-hora editable" id="ultima-hora-section">
+      <div class="imagen-grande">
+        <p class="editable-content" data-field="image-text" style="text-align:center; line-height:300px;">Imagen Principal</p>
+        <input type="file" class="image-upload" accept="image/*" style="display:none;">
+      </div>
+      <div class="texto">
+        <h2 class="editable-content" data-field="title">Título de Última Hora</h2>
+        <p class="editable-content" data-field="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet, velit sed suscipit ultrices, justo turpis placerat urna, vitae porttitor est urna non velit.</p>
+      </div>
+    </section>
+
+    <section class="noticias-pequenas" id="noticias-pequenas-section">
+      <div class="noticia editable" id="noticia-1">
+        <img src="img1.jpg" alt="Noticia 1" class="editable-image">
+        <input type="file" class="image-upload" accept="image/*" style="display:none;">
+        <p class="editable-content" data-field="caption">Titular breve de la noticia 1</p>
+      </div>
+      <div class="noticia editable" id="noticia-2">
+        <img src="img2.jpg" alt="Noticia 2" class="editable-image">
+        <input type="file" class="image-upload" accept="image/*" style="display:none;">
+        <p class="editable-content" data-field="caption">Titular breve de la noticia 2</p>
+      </div>
+      <div class="noticia editable" id="noticia-3">
+        <img src="img3.jpg" alt="Noticia 3" class="editable-image">
+        <input type="file" class="image-upload" accept="image/*" style="display:none;">
+        <p class="editable-content" data-field="caption">Titular breve de la noticia 3</p>
+      </div>
+      <div class="noticia editable" id="noticia-4">
+        <img src="img4.jpg" alt="Noticia 4" class="editable-image">
+        <input type="file" class="image-upload" accept="image/*" style="display:none;">
+        <p class="editable-content" data-field="caption">Titular breve de la noticia 4</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Contactos | WoTT5 <span class="verificado">✔ Verificado</span> | &copy; 2025
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
