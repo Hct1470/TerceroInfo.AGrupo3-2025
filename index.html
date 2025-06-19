@@ -14,7 +14,7 @@
     </div>
     <nav>
       <a href="#" data-section="inicio">INICIO</a>
-      <a href="#" data-section="ultima-hora">ÚLTIMA HORA</a>
+      <a href="#" data-section="nacionales">NACIONALES</a>
       <a href="#" data-section="deportes">DEPORTES</a>
       <a href="#" data-section="internacionales">INTERNACIONALES</a>
       <a href="#" data-section="olimpiadas">OLIMPIADAS</a>
@@ -27,43 +27,123 @@
   </header>
 
   <main>
-    <section class="ultima-hora editable" id="ultima-hora-section">
-      <div class="imagen-grande">
-        <p class="editable-content" data-field="image-text" style="text-align:center; line-height:300px;">Imagen Principal</p>
-        <input type="file" class="image-upload" accept="image/*" style="display:none;">
+    <section class="news-section-container" id="inicio-section">
+      <h2 class="section-main-title">BIENVENIDO A WoTT5 NOTICIAS</h2>
+      <div class="main-news-article">
+        <div class="main-news-image">
+          <p class="placeholder-text">Imagen de Bienvenida</p>
+        </div>
+        <div class="main-news-content">
+          <h3 class="news-title">Tu Fuente de Noticias Diarias</h3>
+          <p class="news-paragraph">En WoTT5, te mantenemos informado con las últimas noticias de Ecuador y el mundo. Desde la política nacional hasta los eventos deportivos más emocionantes y los desafíos ambientales que impactan nuestro planeta, nuestro compromiso es ofrecerte información veraz y relevante. Explora nuestras secciones para estar siempre al día.</p>
+        </div>
       </div>
-      <div class="texto">
-        <h2 class="editable-content" data-field="title">Título de Última Hora</h2>
-        <p class="editable-content" data-field="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet, velit sed suscipit ultrices, justo turpis placerat urna, vitae porttitor est urna non velit.</p>
+      <div class="small-news-grid">
+        <div class="small-news-item">
+          <img src="https://via.placeholder.com/300x200/ADD8E6/FFFFFF?text=Noticia+Nacional" alt="Noticia Nacional destacada">
+          <p class="news-caption">Visita nuestra sección de Nacionales para las últimas novedades del país.</p>
+        </div>
+        <div class="small-news-item">
+          <img src="https://via.placeholder.com/300x200/FFA07A/FFFFFF?text=Noticia+Deportiva" alt="Noticia Deportiva destacada">
+          <p class="news-caption">No te pierdas los marcadores y análisis en nuestra sección de Deportes.</p>
+        </div>
+        <div class="small-news-item">
+          <img src="https://via.placeholder.com/300x200/98FB98/FFFFFF?text=Noticia+Ambiental" alt="Noticia Ambiental destacada">
+          <p class="news-caption">Conoce los desafíos y soluciones en nuestra sección Ambiental.</p>
+        </div>
       </div>
     </section>
 
-    <section class="noticias-pequenas" id="noticias-pequenas-section">
-      <div class="noticia editable" id="noticia-1">
-        <img src="img1.jpg" alt="Noticia 1" class="editable-image">
-        <input type="file" class="image-upload" accept="image/*" style="display:none;">
-        <p class="editable-content" data-field="caption">Titular breve de la noticia 1</p>
+    <section class="news-section-container" id="nacionales-section" style="display:none;">
+      <h2 class="section-main-title">NACIONALES</h2>
+      <div class="main-news-article">
+        <div class="main-news-image">
+          <p class="placeholder-text">Imagen Principal Nacional</p>
+        </div>
+        <div class="main-news-content">
+          <h3 class="news-title"></h3>
+          <p class="news-paragraph"></p>
+        </div>
       </div>
-      <div class="noticia editable" id="noticia-2">
-        <img src="img2.jpg" alt="Noticia 2" class="editable-image">
-        <input type="file" class="image-upload" accept="image/*" style="display:none;">
-        <p class="editable-content" data-field="caption">Titular breve de la noticia 2</p>
+      <div class="small-news-grid" id="nacionales-small-news">
+        </div>
+    </section>
+
+    <section class="news-section-container" id="deportes-section" style="display:none;">
+      <h2 class="section-main-title">DEPORTES</h2>
+      <div class="deportes-sub-section" id="deportes-tendencias">
+        <h3 class="sub-section-title"></h3>
+        <div class="small-news-grid">
+          </div>
       </div>
-      <div class="noticia editable" id="noticia-3">
-        <img src="img3.jpg" alt="Noticia 3" class="editable-image">
-        <input type="file" class="image-upload" accept="image/*" style="display:none;">
-        <p class="editable-content" data-field="caption">Titular breve de la noticia 3</p>
+      <div class="deportes-sub-section" id="deportes-partidos">
+        <h3 class="sub-section-title"></h3>
+        <div class="small-news-grid">
+          </div>
       </div>
-      <div class="noticia editable" id="noticia-4">
-        <img src="img4.jpg" alt="Noticia 4" class="editable-image">
-        <input type="file" class="image-upload" accept="image/*" style="display:none;">
-        <p class="editable-content" data-field="caption">Titular breve de la noticia 4</p>
+      <div class="deportes-sub-section" id="deportes-equipos">
+        <h3 class="sub-section-title"></h3>
+        <div class="small-news-grid">
+          </div>
       </div>
     </section>
+
+    <section class="news-section-container" id="internacionales-section" style="display:none;">
+      <h2 class="section-main-title">INTERNACIONALES</h2>
+      <div class="main-news-article">
+        <div class="main-news-image">
+          <p class="placeholder-text">Imagen Principal Internacional</p>
+        </div>
+        <div class="main-news-content">
+          <h3 class="news-title"></h3>
+          <p class="news-paragraph"></p>
+        </div>
+      </div>
+      <div class="small-news-grid" id="internacionales-small-news">
+        </div>
+    </section>
+
+    <section class="news-section-container" id="olimpiadas-section" style="display:none;">
+      <h2 class="section-main-title">OLIMPIADAS</h2>
+      <div class="main-news-article">
+        <div class="main-news-image">
+          <p class="placeholder-text">Imagen Principal Olimpiadas</p>
+        </div>
+        <div class="main-news-content">
+          <h3 class="news-title"></h3>
+          <p class="news-paragraph"></p>
+        </div>
+      </div>
+      <div class="small-news-grid" id="olimpiadas-small-news">
+        </div>
+    </section>
+
+    <section class="news-section-container" id="ambiental-section" style="display:none;">
+      <h2 class="section-main-title">AMBIENTAL</h2>
+      <div class="main-news-article">
+        <div class="main-news-image">
+          <p class="placeholder-text">Imagen Principal Ambiental</p>
+        </div>
+        <div class="main-news-content">
+          <h3 class="news-title"></h3>
+          <p class="news-paragraph"></p>
+        </div>
+      </div>
+      <div class="small-news-grid" id="ambiental-small-news">
+        </div>
+    </section>
+
   </main>
 
   <footer>
-    Contactos | WoTT5 <span class="verificado">✔ Verificado</span> | &copy; 2025
+    <div class="footer-contact">
+      <strong>Contactos</strong><br>
+      info@wott5.com<br>
+      Tel: +593 99 123 4567
+    </div>
+    <div>
+      WoTT5 <span class="verificado">✔ Verificado</span> | &copy; 2025
+    </div>
   </footer>
 
   <script src="script.js"></script>

@@ -1,266 +1,416 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
+/* Definición de variables CSS para los colores */
+:root {
+    --electric-cyan: #00FFFF; /* Se mantiene la variable por si quieres usarla más adelante, pero se reducirá su uso decorativo */
+    --light-gray: #F0F2F5;   /* Gris Claro (para fondos y textos secundarios) */
+    --deep-midnight-blue: #1A2C3D; /* Azul Noche Profundo (para fondos principales, texto primario) */
+    --darker-blue-accent: #0D2235; /* Un tono un poco más oscuro que el azul noche para acentos si se necesita distinción*/
   }
   
+  /* General Body Styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--light-gray); /* Fondo general gris claro */
+    color: var(--deep-midnight-blue); /* Texto principal azul noche profundo */
+    line-height: 1.6;
+  }
+  
+  /* Header Styles */
   header {
+    background-color: var(--deep-midnight-blue); /* Fondo del header azul noche profundo */
+    color: white; /* Texto del header blanco (contraste con el azul noche) */
+    padding: 15px 30px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; /* Alinea los elementos al inicio, centro y final */
-    background-color: #1a1a1a;
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
   }
   
   .logo img {
-    height: 50px;
-    margin-right: 20px;
+    height: 60px;
+    filter: brightness(0) invert(1); /* Si tu logo es oscuro, esto lo hará blanco para contraste */
   }
   
   nav {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
   
   nav a {
-    color: white;
+    color: white; /* Enlaces de navegación blancos */
     text-decoration: none;
     font-weight: bold;
     padding: 5px 0;
+    position: relative;
     transition: color 0.3s ease;
   }
   
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0; /* Eliminado el alto para que la línea no aparezca */
+    bottom: -3px;
+    left: 0;
+    background-color: transparent; /* Fondo transparente */
+    transition: width 0.3s ease;
+  }
+  
   nav a:hover {
-    color: #00bcd4; /* Un azul más vibrante al pasar el ratón */
+    color: var(--electric-cyan); /* Cian eléctrico al pasar el ratón */
+  }
+  
+  nav a:hover::after {
+    width: 0; /* Asegurarse de que no crezca al pasar el ratón */
+  }
+  
+  /* Highlight active navigation link */
+  nav a.active-nav {
+    color: var(--electric-cyan); /* Cian eléctrico para el enlace activo */
+    border-bottom: 2px solid transparent; /* Se mantiene el borde pero se hace transparente */
   }
   
   .search-bar-general {
     display: flex;
-    align-items: center;
+    gap: 8px;
   }
   
   .search-bar-general input {
-    padding: 8px 12px;
+    padding: 10px 15px;
     border: none;
     border-radius: 20px;
-    font-size: 14px;
-    width: 250px;
-    margin-right: 10px;
-    background-color: #333;
-    color: white;
+    background-color: white; /* Fondo del input blanco */
+    color: var(--deep-midnight-blue); /* Texto del input azul noche profundo */
+    font-size: 0.9em;
+    outline: none;
+    transition: all 0.3s ease;
   }
   
   .search-bar-general input::placeholder {
-    color: #bbb;
+    color: #777; /* Placeholder en gris */
+  }
+  
+  .search-bar-general input:focus {
+    box-shadow: 0 0 0 2px var(--deep-midnight-blue); /* Borde de enfoque azul noche profundo */
   }
   
   .search-bar-general button {
-    background-color: #00bcd4; /* Azul vibrante */
+    background-color: var(--deep-midnight-blue); /* Botón de búsqueda azul noche profundo */
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 10px 18px;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 14px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
   }
   
   .search-bar-general button:hover {
-    background-color: #0097a7; /* Un tono más oscuro de azul */
+    background-color: var(--electric-cyan); /* Cian eléctrico al pasar el ratón por el botón */
+    color: var(--deep-midnight-blue); /* Texto del botón oscuro para contraste */
   }
   
+  /* Main Content Area */
   main {
     padding: 30px 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1300px;
+    margin: 30px auto;
+    background-color: white; /* Fondo del main blanco */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra suave */
   }
   
-  .ultima-hora {
+  /* General Section Container (for all independent sections) */
+  .news-section-container {
+    margin-bottom: 50px;
+    border: 1px solid var(--light-gray); /* Borde gris claro */
+    border-radius: 8px;
+    padding: 25px;
+    background-color: white; /* Fondo de sección blanco */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .news-section-container .section-main-title {
+    color: var(--deep-midnight-blue); /* Título principal azul noche profundo */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    border-bottom: 3px solid transparent; /* Eliminado el subrayado cian */
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Main News Article within a Section */
+  .main-news-article {
     display: flex;
     gap: 30px;
     margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .ultima-hora .imagen-grande {
-    flex: 2;
-    background-color: #ddd;
-    height: 350px;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative; /* Para posicionar el input de archivo */
-    cursor: pointer; /* Indica que es clickeable */
-    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    text-align: center;
   }
   
-  .ultima-hora .imagen-grande img {
+  .main-news-image {
+    flex: 2;
+    min-width: 350px;
+    background-color: var(--light-gray); /* Fondo de imagen principal gris claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-news-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
   }
   
-  .ultima-hora .texto {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .main-news-image .placeholder-text {
+    color: var(--deep-midnight-blue); /* Texto del placeholder azul noche profundo */
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 350px;
   }
   
-  .ultima-hora h2 {
-    font-size: 2.2em;
-    color: #1a1a1a;
-    margin-bottom: 10px;
+  .main-news-content {
+    flex: 1.5;
+    min-width: 300px;
   }
   
-  .ultima-hora p {
+  .main-news-content .news-title {
+    color: var(--deep-midnight-blue); /* Título de noticia principal en azul noche profundo */
+    margin-top: 0;
+    font-size: 1.8em;
+    line-height: 1.3;
+  }
+  
+  .main-news-content .news-paragraph {
+    color: var(--deep-midnight-blue); /* Párrafo en azul noche profundo */
     font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
   }
   
-  .noticias-pequenas {
+  /* Small News Grid (used within each section) */
+  .small-news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
   }
   
-  .noticia {
-    background-color: #f9f9f9;
-    padding: 15px;
+  .small-news-item {
+    background-color: white; /* Fondo de item de noticia pequeño blanco */
+    border: 1px solid var(--light-gray); /* Borde gris claro */
     border-radius: 8px;
+    overflow: hidden;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative; /* Para posicionar el input de archivo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
   }
   
-  .noticia:hover {
+  .small-news-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
   }
   
-  .noticia img {
+  .small-news-item img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    cursor: pointer; /* Indica que es clickeable */
+    display: block;
+    border-bottom: 1px solid var(--light-gray); /* Borde inferior gris claro */
   }
   
-  .noticia p {
+  .small-news-item .news-caption {
     font-size: 1em;
-    color: #444;
-    line-height: 1.5;
-    font-weight: bold;
+    color: var(--deep-midnight-blue); /* Texto del caption azul noche profundo */
+    padding: 15px;
+    text-align: left;
+    flex-grow: 1;
   }
   
+  /* Deportes Sub-sections */
+  .deportes-sub-section {
+    margin-bottom: 40px;
+    padding-top: 20px;
+  }
+  
+  .deportes-sub-section .sub-section-title {
+    color: var(--deep-midnight-blue); /* Título de subsección en azul noche profundo */
+    text-align: center;
+    margin-bottom: 10px; /* Reducido para acercar la descripción */
+    font-size: 1.6em;
+    border-bottom: 2px dashed transparent; /* Eliminado el subrayado cian punteado */
+    padding-bottom: 8px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* New style for sub-section description */
+  .deportes-sub-section .sub-section-description {
+    text-align: center;
+    color: #555; /* Un gris un poco más claro para la descripción */
+    font-size: 0.95em;
+    margin-bottom: 25px; /* Espacio después de la descripción */
+    max-width: 800px; /* Para que no se extienda demasiado */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Footer Styles */
   footer {
-    background-color: #1a1a1a;
-    color: white;
+    background-color: var(--deep-midnight-blue); /* Fondo del footer azul noche profundo */
+    color: white; /* Texto del footer blanco */
     text-align: center;
     padding: 25px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     font-size: 0.9em;
-    margin-top: 40px;
+    border-top: 5px solid var(--deep-midnight-blue); /* Borde superior azul noche profundo para integrar */
+  }
+  
+  .footer-contact {
+    margin-bottom: 10px;
+    line-height: 1.8;
+  }
+  
+  .footer-contact strong {
+    color: var(--electric-cyan); /* Cian eléctrico para el encabezado de contacto */
   }
   
   .verificado {
-    display: inline-block;
-    background-color: #4caf50;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    margin-left: 8px;
+    color: var(--electric-cyan); /* Cian eléctrico para el texto "Verificado" */
     font-weight: bold;
   }
   
-  /* Estilos para el contenido editable */
-  .editable-content:focus {
-    outline: 2px solid #00bcd4;
-    background-color: #e6f7ff;
-    border-radius: 4px;
-    padding: 2px 5px;
+  /* Utility classes for JavaScript interaction (to hide inputs) */
+  .hidden {
+    display: none !important;
   }
   
-  /* Media Queries para Responsividad */
-  @media (max-width: 768px) {
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
     header {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
     }
   
     nav {
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 15px;
-      gap: 15px;
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+    }
+  
+    nav a {
+        padding: 5px 10px;
     }
   
     .search-bar-general {
-      width: 100%;
-      margin-top: 15px;
-      justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+        justify-content: center;
     }
   
-    .search-bar-general input {
-      width: calc(100% - 70px); /* Ajusta el ancho para el botón */
+    .main-news-article {
+        flex-direction: column;
     }
   
-    .ultima-hora {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    .ultima-hora .imagen-grande {
-      height: 250px;
-    }
-  
-    .ultima-hora h2 {
-      font-size: 1.8em;
-    }
-  
-    .ultima-hora p {
-      font-size: 1em;
-    }
-  
-    .noticias-pequenas {
-      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    .main-news-image,
+    .main-news-content {
+        min-width: unset;
+        width: 100%;
     }
   }
   
-  @media (max-width: 480px) {
+  @media (max-width: 576px) {
+    header {
+        padding: 15px 10px;
+    }
+  
+    .logo img {
+        height: 50px;
+    }
+  
     nav a {
-      font-size: 0.9em;
+        font-size: 0.9em;
+        padding: 3px 5px;
     }
   
-    .search-bar-general input {
-      font-size: 12px;
-    }
-  
+    .search-bar-general input,
     .search-bar-general button {
-      font-size: 12px;
-      padding: 6px 12px;
+        font-size: 0.8em;
+        padding: 8px 12px;
     }
   
-    .ultima-hora .imagen-grande {
-      height: 200px;
+    main {
+        padding: 20px 10px;
     }
   
-    .noticia img {
-      height: 150px;
+    .news-section-container .section-main-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+  
+    .main-news-image {
+        height: 250px;
+    }
+  
+    .main-news-image .placeholder-text {
+        line-height: 250px;
+        font-size: 1em;
+    }
+  
+    .main-news-content .news-title {
+        font-size: 1.5em;
+    }
+  
+    .main-news-content .news-paragraph {
+        font-size: 1em;
+    }
+  
+    .small-news-grid {
+        grid-template-columns: 1fr;
+    }
+  
+    .small-news-item img {
+        height: 160px;
+    }
+  
+    .deportes-sub-section .sub-section-title {
+        font-size: 1.4em;
+    }
+    
+    .deportes-sub-section .sub-section-description {
+        font-size: 0.9em;
+    }
+  
+    footer {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+  
+    .footer-contact {
+        margin-bottom: 15px;
     }
   }
+  
