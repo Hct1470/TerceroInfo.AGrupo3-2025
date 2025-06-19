@@ -1,0 +1,410 @@
+* Definición de variables CSS para los colores */
+:root {
+  --electric-cyan: #00FFFF;
+  --light-gray: #F0F2F5;
+  --deep-midnight-blue: #1A2C3D;
+  --darker-blue-accent: #0D2235;
+}
+
+/* General Body Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--light-gray);
+  color: var(--deep-midnight-blue);
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--deep-midnight-blue);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.logo img {
+  height: 60px;
+  filter: brightness(0) invert(1);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: -3px;
+  left: 0;
+  background-color: transparent;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--electric-cyan);
+}
+
+nav a:hover::after {
+  width: 0;
+}
+
+/* Highlight active navigation link */
+nav a.active-nav {
+  color: var(--electric-cyan);
+  border-bottom: 2px solid transparent;
+}
+
+.search-bar-general {
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar-general input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  color: var(--deep-midnight-blue);
+  font-size: 0.9em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar-general input::placeholder {
+  color: #777;
+}
+
+.search-bar-general input:focus {
+  box-shadow: 0 0 0 2px var(--deep-midnight-blue);
+}
+
+.search-bar-general button {
+  background-color: var(--deep-midnight-blue);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar-general button:hover {
+  background-color: var(--electric-cyan);
+  color: var(--deep-midnight-blue);
+}
+
+/* Main Content Area */
+main {
+  padding: 30px 20px;
+  max-width: 1300px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* General Section Container */
+.news-section-container {
+  margin-bottom: 50px;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 25px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.news-section-container .section-main-title {
+  color: var(--deep-midnight-blue);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Main News Article within a Section (Not used directly in Deportes, but included for consistency if content changes) */
+.main-news-article {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.main-news-image {
+  flex: 2;
+  min-width: 350px;
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.main-news-image .placeholder-text {
+  color: var(--deep-midnight-blue);
+  font-style: italic;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 350px;
+}
+
+.main-news-content {
+  flex: 1.5;
+  min-width: 300px;
+}
+
+.main-news-content .news-title {
+  color: var(--deep-midnight-blue);
+  margin-top: 0;
+  font-size: 1.8em;
+  line-height: 1.3;
+}
+
+.main-news-content .news-paragraph {
+  color: var(--deep-midnight-blue);
+  font-size: 1.1em;
+}
+
+/* Small News Grid (used within each section) */
+.small-news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.small-news-item {
+  background-color: white;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.small-news-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.small-news-item .news-caption {
+  font-size: 1em;
+  color: var(--deep-midnight-blue);
+  padding: 15px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+/* Deportes Sub-sections */
+.deportes-sub-section {
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+.deportes-sub-section .sub-section-title {
+  color: var(--deep-midnight-blue);
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.6em;
+  border-bottom: 2px dashed transparent;
+  padding-bottom: 8px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* New style for sub-section description */
+.deportes-sub-section .sub-section-description {
+  text-align: center;
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 25px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--deep-midnight-blue);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  border-top: 5px solid var(--deep-midnight-blue);
+}
+
+.footer-contact {
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.footer-contact strong {
+  color: var(--electric-cyan);
+}
+
+.verificado {
+  color: var(--electric-cyan);
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 20px;
+  }
+
+  nav {
+      margin-top: 15px;
+      width: 100%;
+      justify-content: space-around;
+      gap: 10px;
+  }
+
+  nav a {
+      padding: 5px 10px;
+  }
+
+  .search-bar-general {
+      width: 100%;
+      margin-top: 15px;
+      justify-content: center;
+  }
+
+  .main-news-article {
+      flex-direction: column;
+  }
+
+  .main-news-image,
+  .main-news-content {
+      min-width: unset;
+      width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+      padding: 15px 10px;
+  }
+
+  .logo img {
+      height: 50px;
+  }
+
+  nav a {
+      font-size: 0.9em;
+      padding: 3px 5px;
+  }
+
+  .search-bar-general input,
+  .search-bar-general button {
+      font-size: 0.8em;
+      padding: 8px 12px;
+  }
+
+  main {
+      padding: 20px 10px;
+  }
+
+  .news-section-container .section-main-title {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+  }
+
+  .main-news-image {
+      height: 250px;
+  }
+
+  .main-news-image .placeholder-text {
+      line-height: 250px;
+      font-size: 1em;
+  }
+
+  .main-news-content .news-title {
+      font-size: 1.5em;
+  }
+
+  .main-news-content .news-paragraph {
+      font-size: 1em;
+  }
+
+  .small-news-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .small-news-item img {
+      height: 160px;
+  }
+
+  .deportes-sub-section .sub-section-title {
+      font-size: 1.4em;
+  }
+ 
+  .deportes-sub-section .sub-section-description {
+      font-size: 0.9em;
+  }
+
+  footer {
+      flex-direction: column;
+      padding: 20px 10px;
+  }
+
+  .footer-contact {
+      margin-bottom: 15px;
+  }
+}
